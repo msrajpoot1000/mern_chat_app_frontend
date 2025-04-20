@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     if (storedToken) {
       setToken(storedToken);
 
-      fetch("http://localhost:5000/get-me", {
+      fetch(`${process.env.REACT_APP_API_BASE_URL}/get-me`, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
