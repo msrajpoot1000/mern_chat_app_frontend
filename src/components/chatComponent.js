@@ -57,7 +57,7 @@ function ChatComponent() {
     console.log(user?._id || "user1");
     console.log(selectedUser);
     try {
-       const response = await fetch(
+      onst response = await fetch(
         `${process.env.REACT_APP_API_BASE_URL}/get-chats?sender=${
           user?._id || "user1"
         }&receiver=${selectedUser}`
