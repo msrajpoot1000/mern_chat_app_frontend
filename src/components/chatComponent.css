@@ -1,0 +1,138 @@
+.chat-container {
+    display: flex;
+    height: 90vh;
+    border: 1px solid #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    padding: 15px;
+    background-color: #00a884;
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.user-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-item:hover,
+.user-item.active {
+    background-color: #e0f7f3;
+    font-weight: bold;
+}
+
+.chat-window {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 10px 15px;
+    background-color: #ededed;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    background-color: #ece5dd;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message-bubble.sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.message-bubble.received {
+    align-self: flex-start;
+    background-color: white;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #f7f7f7;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #00a884;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #007e66;
+}
+
+
+
+.chat-header-inside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-bubble-head {
+    display: flex;
+    /* border-bottom: 2px solid rgb(239, 239, 239); */
+    /* padding-bottom: 0.2rem; */
+
+}
+
+.message-bubble-head-start {
+    justify-content: flex-end;
+
+
+}
+
+.message-bubble-head-end {
+    justify-content: flex-start;
+}
+
+
+.message-bubble {
+    display: inline-block;
+    /* margin:0.5rem 0rem; */
+}
+
+.chatInputField:focus{
+    
+}
