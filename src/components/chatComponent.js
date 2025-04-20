@@ -15,7 +15,9 @@ function ChatComponent() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users`);
+        const response = await fetch(
+          `${process.env.REACT_APP_API_BASE_URL}/users`
+        );
         const data = await response.json();
 
         const id = user?._id || "user1"; // No need for 'await', just access the property
@@ -57,7 +59,7 @@ function ChatComponent() {
     console.log(user?._id || "user1");
     console.log(selectedUser);
     try {
-      onst response = await fetch(
+      const response = await fetch(
         `${process.env.REACT_APP_API_BASE_URL}/get-chats?sender=${
           user?._id || "user1"
         }&receiver=${selectedUser}`
