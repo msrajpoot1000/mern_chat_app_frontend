@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { useAuth } from "../context/AuthContext";
 import "./chatComponent.css"; // 🟩 Import CSS
 
-const socket = io("http://localhost:5000");
+const socket = io(process.env.REACT_APP_API_BASE_URL);
 
 function ChatComponent() {
   const { token, user, logout } = useAuth();
@@ -15,7 +15,7 @@ function ChatComponent() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users`);
         const data = await response.json();
 
         const id = user?._id || "user1"; // No need for 'await', just access the property
@@ -57,8 +57,8 @@ function ChatComponent() {
     console.log(user?._id || "user1");
     console.log(selectedUser);
     try {
-      const response = await fetch(
-        `http://localhost:5000/get-chats?sender=${
+       const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/get-chats?sender=${
           user?._id || "user1"
         }&receiver=${selectedUser}`
       );
